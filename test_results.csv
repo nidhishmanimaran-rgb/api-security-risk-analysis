@@ -1,0 +1,11 @@
+Test Name,API,Endpoint,Method,Status Code,Result (Pass/Fail),Security Finding,Severity
+List Users (Auth Check),ReqRes,/api/users,GET,200,Pass,No authentication required to list users,Medium
+Get Single User,ReqRes,/api/users/2,GET,200,Pass,PII exposed without auth,Medium
+Access Non-Existent User (IDOR Check),ReqRes,/api/users/9999,GET,404,Pass,IDOR not exploitable,Low
+Login - Weak Auth Check,ReqRes,/api/login,POST,200,Pass,Descriptive error messages,Low
+Login with Missing Password,ReqRes,/api/login,POST,400,Pass,Error message reveals missing field,Low
+List Posts (Open Endpoint Check),JSONPlaceholder,/posts,GET,200,Fail,X-Powered-By header exposes server technology,Low
+Get Single Post,JSONPlaceholder,/posts/1,GET,200,Pass,No auth required,Medium
+Create Post (No Auth Required),JSONPlaceholder,/posts,POST,201,Pass,Unauthenticated POST allowed,High
+Delete Resource Without Auth,JSONPlaceholder,/posts/1,DELETE,200,Pass,Unauthenticated DELETE allowed,High
+Access Users Data (Data Exposure Check),JSONPlaceholder,/users,GET,200,Pass,Full PII exposed without auth,Medium
