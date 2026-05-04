@@ -1,0 +1,19 @@
+{
+  "security_report": {
+    "metadata": {
+      "project": "API Security Risk Analysis",
+      "date": "2025-07-10",
+      "tool": "Postman",
+      "total_requests": 10,
+      "total_tests": 30,
+      "passed": 27,
+      "failed": 3
+    },
+    "summary": {
+      "high_severity": 2,
+      "medium_severity": 4,
+      "low_severity": 4,
+      "overall_risk": "High"
+    }
+  }
+}
